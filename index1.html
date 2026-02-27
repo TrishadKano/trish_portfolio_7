@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trishad Phogole | Data Engineer & Data Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-name">TRISHAD PHOGOLE</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+  <div class="loader-pct" id="loaderPct">0%</div>
+</div>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <a class="nav-brand" href="#home">T.<span>P</span></a>
+  <ul class="link-group">
+    <li class="link active"><a href="#home" data-num="01">Home</a></li>
+    <li class="link"><a href="#about" data-num="02">About</a></li>
+    <li class="link"><a href="#experience" data-num="03">Experience</a></li>
+    <li class="link"><a href="#skills" data-num="04">Skills</a></li>
+    <li class="link"><a href="#projects" data-num="05">Projects</a></li>
+    <li class="link"><a href="#certifications" data-num="06">Certs</a></li>
+    <li class="link"><a href="#contact" data-num="07">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="link-group" style="display:flex;flex-direction:column;width:100%">
+    <li class="link"><a href="#home" data-num="01">Home</a></li>
+    <li class="link"><a href="#about" data-num="02">About</a></li>
+    <li class="link"><a href="#experience" data-num="03">Experience</a></li>
+    <li class="link"><a href="#skills" data-num="04">Skills</a></li>
+    <li class="link"><a href="#projects" data-num="05">Projects</a></li>
+    <li class="link"><a href="#certifications" data-num="06">Certs</a></li>
+    <li class="link"><a href="#contact" data-num="07">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ─── HOME ─────────────────────────────────────── -->
+<section id="home">
+  <div class="home-bg-grid"></div>
+  <div class="home-bg-orb"></div>
+  <img src="Image.jpeg" class="home-img" alt="Trishad Phogole">
+
+  <div class="home-content">
+    <div class="home-greeting">👋 &nbsp; Hello, World</div>
+    <h1 class="home-name">Trishad<br><span class="teal">Phogole</span></h1>
+    <div class="home-roles" id="typeTarget"><span class="type-cursor"></span></div>
+    <p class="home-desc">
+      Data Engineer & Scientist building scalable pipelines, intelligent ML models, and data-driven insights that move the needle.
+    </p>
+    <div class="home-cta">
+      <a href="#projects" class="btn-primary">View Projects →</a>
+      <a href="Trishad Phogole.pdf" download class="btn-outline">Download CV</a>
+    </div>
+  </div>
+
+  <div class="home-stats">
+    <div class="stat-item">
+      <div class="stat-number" data-count="1">0</div>
+      <div class="stat-label">Year Exp.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="13">0</div>
+      <div class="stat-label">Projects</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="9">0</div>
+      <div class="stat-label">Certifications</div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─────────────────────────────────────── -->
+<section id="about">
+  <div class="section-label reveal">02 / About Me</div>
+  <div class="section-title reveal reveal-delay-1">Who I <em>Am</em></div>
+
+  <div class="about-grid">
+    <div class="about-photo-wrap reveal">
+      <div class="about-photo-frame">
+        <img src="WhatsApp Image 2025-07-07 at 14.20.15.jpeg" class="about-img" alt="Trishad Phogole">
+      </div>
+      <a href="Trishad Phogole.pdf" download class="download-cv-btn">
+        ↓ &nbsp; Download CV
+      </a>
+    </div>
+
+    <div class="about-text">
+      <p class="reveal reveal-delay-1">
+        Curious and detail-oriented <strong>Data Scientist and Data Engineer</strong> with expertise in machine learning, data engineering and business intelligence. Proven track record of building scalable data pipelines, deploying ML models, and delivering data-driven insights that improve operational efficiency.
+      </p>
+      <p class="reveal reveal-delay-2">
+        Passionate about leveraging advanced technologies to optimise operations and drive innovation. Recognised for improving operational efficiency and enabling performance growth through data-driven recommendations. Committed to continuous learning and staying up to date with the latest industry trends and emerging technologies.
+      </p>
+
+      <!-- Education Timeline -->
+      <div class="timeline reveal reveal-delay-3">
+        <div class="timeline-title">Education</div>
+        <div class="timeline-items">
+          <div class="timeline-item">
+            <div class="timeline-year">2015 – 2019</div>
+            <div class="timeline-place">Kgagatlou Secondary School</div>
+            <div class="timeline-degree">National Senior Certificate (Matric)</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2020 – 2023</div>
+            <div class="timeline-place">University of Limpopo</div>
+            <div class="timeline-degree">Bachelor of Science in Mathematical Sciences (Statistics & Computer Science)</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024 - 2024</div>
+            <div class="timeline-place">University of Limpopo</div>
+            <div class="timeline-degree">Bachelor of Science Honours in Computer Science</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─────────────────────────────────── -->
+<section id="experience">
+  <div class="section-label reveal">03 / Experience</div>
+  <div class="section-title reveal reveal-delay-1">Work <em>Experience</em></div>
+
+  <div class="exp-cards">
+    <!-- MoMo -->
+    <div class="exp-card reveal reveal-delay-2">
+      <div class="exp-header">
+        <img src="MoMo.jpg" class="company-logo" alt="MoMo">
+        <div class="exp-meta">
+          <div class="company-name">MoMo from MTN</div>
+          <div class="job-title">Data, BI & Analytics Graduate (MTN Group FinTech)</div>
+          <div class="experience-period">December 2025 – Present &nbsp;|&nbsp; Hybrid</div>
+        </div>
+        <span class="exp-badge">Current</span>
+      </div>
+      <ul class="experience-responsibilities">
+        <li>Build and maintain data pipelines and automation workflows using Microsoft Fabric and Microsoft Power Automate to enable seamless data flow from OPCOs to on-prem lakehouses for analysis.</li>
+        <li>Design and maintain organizational KPI dashboards for MoMo services using Microsoft Power BI to monitor operational and business performance.</li>
+        <li>Collaborate with team members to deliver data-driven recommendations.</li>
+      </ul>
+    </div>
+
+    <!-- Mintek -->
+    <div class="exp-card reveal reveal-delay-3">
+      <div class="exp-header">
+        <img src="logo-resized-mintek-with-text.29ddd1cc.png" class="company-logo" alt="Mintek">
+        <div class="exp-meta">
+          <div class="company-name">Mintek</div>
+          <div class="job-title">Data Scientist</div>
+          <div class="experience-period">March 2025 – November 2025 &nbsp;|&nbsp; Full-time</div>
+        </div>
+      </div>
+      <ul class="experience-responsibilities">
+        <li>Developed and deployed ML models to optimize organizational operations, achieving up to <strong style="color:var(--teal)">20% improvement</strong> through A/B testing and algorithm fine-tuning.</li>
+        <li>Designed and maintained organisational Key Performance Indicators (KPIs) dashboards, covering research
+outputs, HR metrics, divisional performance, and other key areas to support 
+performance monitoring, <strong style="color:var(--teal)">reducing manual reporting time by 40%</strong>.</li>
+        <li>Executed ETL processes integrating data from SharePoint, databases and Excel, improving data consistency by <strong style="color:var(--teal)">95%</strong>.</li>
+        <li>Leveraged SQL to extract, transform, and analyze large datasets, optimizing query performance and ensuring <strong style="color:var(--teal)">99% data accuracy</strong>.</li>
+        <li>Translated complex data into impactful business insights, contributing to a <strong style="color:var(--teal)">15% improvement</strong> in operational efficiency and enhanced strategic planning outcomes.</li>
+        <li>Collaborated with cross-functional teams delivering a <strong style="color:var(--teal)">20% increase</strong> in overall operational performance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-label reveal">04 / Skills</div>
+  <div class="section-title reveal reveal-delay-1">Tech <em>Stack</em></div>
+
+  <div class="skills-filter reveal reveal-delay-2">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="languages">Languages</button>
+    <button class="filter-btn" data-filter="ml">ML / AI</button>
+    <button class="filter-btn" data-filter="data">Data &amp; BI</button>
+    <button class="filter-btn" data-filter="cloud">Cloud &amp; Infra</button>
+    <button class="filter-btn" data-filter="databases">Databases</button>
+  </div>
+
+  <div class="skills-container">
+    <div class="skill-card reveal" data-cat="languages">
+      <img src="python.png" class="skill-img" alt="Python">
+      <div class="skill-name">Python</div>
+      <div class="skill-info">Pandas, NumPy, Matplotlib, Seaborn, TensorFlow, Keras, PyTorch, Scikit-learn</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1" data-cat="data">
+      <img src="Power-BI-Logo-700x394.png" class="skill-img" alt="Power BI">
+      <div class="skill-name">Power BI</div>
+      <div class="skill-info">Interactive dashboards, DAX, Power BI Service & Desktop</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2" data-cat="data">
+      <img src="microsoft fabric.jpg" class="skill-img" alt="Microsoft Fabric">
+      <div class="skill-name">Microsoft Fabric</div>
+      <div class="skill-info">Unified analytics platform, building and maintaining data pipelines</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-3" data-cat="cloud">
+      <img src="microsoft power automate.png" class="skill-img" alt="Power Automate">
+      <div class="skill-name">Power Automate</div>
+      <div class="skill-info">Designing automated workflows for data operations and business processes</div>
+    </div>
+    <div class="skill-card reveal" data-cat="data">
+      <img src="spark.png" class="skill-img" alt="Spark">
+      <div class="skill-name">Apache Spark</div>
+      <div class="skill-info">Large-scale data processing, advanced SQL queries, complex analytics</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1" data-cat="data">
+      <img src="WinScp.jpg" class="skill-img" alt="WinSCP">
+      <div class="skill-name">WinSCP</div>
+      <div class="skill-info">Secure file transfer and remote file management, SFTP for large datasets</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2" data-cat="cloud">
+      <img src="git.png" class="skill-img" alt="Git">
+      <div class="skill-name">Git</div>
+      <div class="skill-info">Version control, branching strategies, collaborative development</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-3" data-cat="cloud">
+      <img src="github.png" class="skill-img" alt="GitHub">
+      <div class="skill-name">GitHub</div>
+      <div class="skill-info">Code hosting, pull requests, issue tracking, CI/CD workflows</div>
+    </div>
+    <div class="skill-card reveal" data-cat="data">
+      <img src="excel.png" class="skill-img" alt="Excel">
+      <div class="skill-name">Microsoft Excel</div>
+      <div class="skill-info">VLOOKUP, HLOOKUP, Index-Match, nested IF, pivot tables and charts</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1" data-cat="databases">
+      <img src="mysql.png" class="skill-img" alt="MySQL">
+      <div class="skill-name">MySQL</div>
+      <div class="skill-info">Relational database design, complex queries, ETL and analysis</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2" data-cat="databases">
+      <img src="sql-server.png" class="skill-img" alt="SQL Server">
+      <div class="skill-name">SQL Server</div>
+      <div class="skill-info">SSMS database management, stored procedures, query optimization</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-3" data-cat="ml">
+      <img src="Tensorflow Keras.png" class="skill-img" alt="TF Keras">
+      <div class="skill-name">TensorFlow & Keras</div>
+      <div class="skill-info">Deep learning for classification, regression, image recognition, NLP</div>
+    </div>
+    <div class="skill-card reveal" data-cat="ml">
+      <img src="scikit-learn.png" class="skill-img" alt="Scikit-learn">
+      <div class="skill-name">Scikit-Learn</div>
+      <div class="skill-info">Classification, regression, clustering, dimensionality reduction</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1" data-cat="ml">
+      <img src="pytorch.png" class="skill-img" alt="PyTorch">
+      <div class="skill-name">PyTorch</div>
+      <div class="skill-info">Neural networks, classification, regression, computer vision</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2" data-cat="cloud">
+      <img src="linux.jpg" class="skill-img" alt="Linux">
+      <div class="skill-name">Linux (Ubuntu)</div>
+      <div class="skill-info">Bash scripting, Nmap, Wireshark, SSH, iptables, security tools</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-3" data-cat="cloud">
+      <img src="Oracle VM VirtualBox.jpg" class="skill-img" alt="VirtualBox">
+      <div class="skill-name">Oracle VM VirtualBox</div>
+      <div class="skill-info">VM management, Ubuntu installation, resource configuration</div>
+    </div>
+    <div class="skill-card reveal" data-cat="databases">
+      <img src="postgresql-logo.png" class="skill-img" alt="PostgreSQL">
+      <div class="skill-name">PostgreSQL</div>
+      <div class="skill-info">Advanced SQL, performance optimization, complex data modeling</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1" data-cat="data">
+      <img src="kafka.jpg" class="skill-img" alt="Kafka">
+      <div class="skill-name">Apache Kafka</div>
+      <div class="skill-info">Real-time data pipelines, high-throughput messaging, distributed systems</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2" data-cat="languages">
+      <img src="sas.png" class="skill-img" alt="SAS">
+      <div class="skill-name">SAS</div>
+      <div class="skill-info">Statistical analysis, data manipulation, predictive modeling</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-3" data-cat= "cloud">
+      <img src="Amazon-Web-Services-AWS-Salary-in-South-Africa.png" class="skill-img" alt="R">
+      <div class="skill-name">AWS</div>
+      <div class="skill-info">Knowledgeable in leveraging AWS cloud services such as EC2, S3, SageMaker, and Lambda for efficient data storage, processing, and model deployment, as well as in building and managing scalable machine learning workflows using SageMaker and other analytics tools.</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-3" data-cat= "cloud">
+      <img src="Azure.png" class="skill-img" alt="R">
+      <div class="skill-name">Microsoft Azure</div>
+      <div class="skill-info">Knowledgeable in using Azure cloud services such as Azure Virtual Machines, Blob Storage, and Functions for data storage, processing, and deployment. Also, building and managing machine learning models using Azure Machine Learning and integrating analytics solutions with Power BI and Synapse Analytics.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ───────────────────────────────────── -->
+<section id="projects">
+  <div class="section-label reveal">05 / Projects</div>
+  <div class="section-title reveal reveal-delay-1">Featured <em>Work</em></div>
+
+  <div class="project-tabs reveal reveal-delay-2">
+    <button class="tab-btn active" data-tab="ml">ML / Python</button>
+    <button class="tab-btn" data-tab="bi">Power BI</button>
+    <button class="tab-btn" data-tab="sql">SQL</button>
+  </div>
+
+  <!-- ML Projects -->
+  <div class="tab-content active" id="tab-ml">
+    <div class="project-card reveal">
+      <img src="project-5.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Machine Learning</div>
+        <div class="project-title">Stock Price Prediction</div>
+        <div class="project-info">Developed a time series forecasting model using LSTM neural networks to predict stock market prices. Implemented data preprocessing pipelines and evaluated model performance with MAE and RMSE metrics.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/MACHINE%20LEARNING/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-1">
+      <img src="project-5.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Machine Learning</div>
+        <div class="project-title">Credit Card Fraud Detection</div>
+        <div class="project-info">Built a fraud detection system using Logistic Regression to classify transactions as fraudulent or legitimate based on transaction data patterns, reducing false positives through proper model evaluation.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/MACHINE%20LEARNING/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-2">
+      <img src="project-5.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Machine Learning</div>
+        <div class="project-title">Disease Prediction System (SVM)</div>
+        <div class="project-info">Developed a disease prediction system using SVM for high-dimensional healthcare data. Deployed via an interactive Streamlit app enabling real-time predictions with accuracy, precision, recall, and F1-score evaluation.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/MACHINE%20LEARNING/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-3">
+      <img src="project-5.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Machine Learning</div>
+        <div class="project-title">Customer Segmentation (K-Means)</div>
+        <div class="project-info">Performed customer segmentation using K-Means clustering and PCA to identify distinct customer groups based on purchasing behavior, enabling data-driven marketing strategies.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/MACHINE%20LEARNING/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <img src="project-5.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Machine Learning</div>
+        <div class="project-title">Boston Housing Price Predictor</div>
+        <div class="project-info">Explored the Boston Housing dataset to develop a predictive model for house prices, understanding how various features influence housing costs using regression techniques.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/MACHINE%20LEARNING/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-1">
+      <img src="project-5.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Data Analysis</div>
+        <div class="project-title">Udemy Courses EDA</div>
+        <div class="project-info">Explored and visualised data from the Udemy course marketplace, analysing attributes such as course prices, ratings, and categories to uncover trends within the e-learning platform.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/Udemy%20Courses%20Analysis/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-2">
+      <img src="project-5.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Data Pipeline</div>
+        <div class="project-title">ETL Data Pipeline</div>
+        <div class="project-info">Designed and implemented an automated ETL pipeline integrating data from diverse sources (SharePoint, databases, Excel) into a centralised data warehouse, improving data consistency by 95%.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Power BI Projects -->
+  <div class="tab-content" id="tab-bi">
+    <div class="project-card reveal">
+      <img src="project-6.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Power BI</div>
+        <div class="project-title">Car Sales Performance Dashboard</div>
+        <div class="project-info">Interactive dashboard analysing car sales performance across multiple regions, uncovering trends and supporting data-driven decisions with dynamic filters and drill-through capabilities.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/POWER%20BI%20PROJECTS/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiNGI1NDAwZTQtYjU5NS00ZmFhLWIzODUtOGRkNzk1NTA3MDY4IiwidCI6IjgyODQxMTQ3LTY4ZWItNDc3My05NmY3LWVjZmU3NjUxYjY0MyIsImMiOjh9" class="project-btn live" target="_blank">Live Demo ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-1">
+      <img src="project-6.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Power BI</div>
+        <div class="project-title">Sales Performance Dashboard</div>
+        <div class="project-info">Dynamic dashboard providing real-time visibility into sales performance across regions, product categories, and time periods. Supports strategic decision-making with forecasting accuracy enhancements.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/POWER%20BI%20PROJECTS/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiYTVkYTg3NzktOTFjMy00NzkzLWFhN2UtZTRiMzdlZjJlZjhhIiwidCI6IjgyODQxMTQ3LTY4ZWItNDc3My05NmY3LWVjZmU3NjUxYjY0MyIsImMiOjh9" class="project-btn live" target="_blank">Live Demo ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-2">
+      <img src="project-6.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">Power BI</div>
+        <div class="project-title">HR Analytics Dashboard</div>
+        <div class="project-info">Comprehensive HR dashboard giving managers real-time insights into workforce performance, retention, diversity, and recruitment efficiency, enabling data-informed HR strategies.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/POWER%20BI%20PROJECTS/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiOTE1ZTIzYmYtNDcwMi00YjY2LThmMWQtMDJkOGIwYzRhOGMxIiwidCI6IjgyODQxMTQ3LTY4ZWItNDc3My05NmY3LWVjZmU3NjUxYjY0MyIsImMiOjh9" class="project-btn live" target="_blank">Live Demo ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SQL Projects -->
+  <div class="tab-content" id="tab-sql">
+    <div class="project-card reveal">
+      <img src="project-9.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">SQL</div>
+        <div class="project-title">Library Management System</div>
+        <div class="project-info">Designed and implemented a Library Management System using normalised relational database tables. Supports book lending, returns, due date tracking, and fine calculation using views and stored procedures.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/SQL%20PROJECTS/Library%20Management%20System%20Project/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-1">
+      <img src="project-9.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">SQL</div>
+        <div class="project-title">Retail Sales Analysis</div>
+        <div class="project-info">Complex SQL queries to extract business insights from transactional data — total revenue, top-performing products, seasonal trends, and customer behaviour using aggregations, subqueries, and window functions.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/SQL%20PROJECTS/Retail%20Sales%20Analysis%20SQL%20Project/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-2">
+      <img src="project-9.jpg" class="project-img" alt="">
+      <div class="project-body">
+        <div class="project-cat">SQL</div>
+        <div class="project-title">Data Analyst Job Market Analysis</div>
+        <div class="project-info">SQL analysis of job listings for data analyst roles uncovering top-paying opportunities, high-demand skills, and geographic trends. Advanced aggregation, data cleaning, and exploration revealing most valuable tools and certifications.</div>
+        <div class="project-btn-grp">
+          <a href="https://github.com/TrishadKano/DATA-SCIENCE-PROJECTS/blob/main/SQL%20PROJECTS/Job%20Analysis/README.md" class="project-btn github" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CERTIFICATIONS ─────────────────────────────── -->
+<section id="certifications">
+  <div class="section-label reveal">06 / Certifications</div>
+  <div class="section-title reveal reveal-delay-1">Certifications &amp; <em> Trainings </em></div>
+
+  <div class="certifications-container">
+    <div class="certification-card reveal">
+      <img src="Data analyst.png" class="certification-img" alt="">
+      <div class="certification-name">Data Analyst Professional Certificate</div>
+      <div class="certification-info">Coursera</div>
+      <div class="certification-date">2025</div>
+      <a href="https://www.coursera.org/account/accomplishments/professional-cert/4AHTNV3KBHNL" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+    <div class="certification-card reveal reveal-delay-1">
+      <img src="data science.png" class="certification-img" alt="">
+      <div class="certification-name">Data Science Professional Certificate</div>
+      <div class="certification-info">Coursera</div>
+      <div class="certification-date">2025</div>
+      <a href="https://www.coursera.org/account/accomplishments/professional-cert/6RTDF4KPIAWZ" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+    <div class="certification-card reveal reveal-delay-2">
+      <img src="machine learning.png" class="certification-img" alt="">
+      <div class="certification-name">Machine Learning Professional Certificate</div>
+      <div class="certification-info">Coursera</div>
+      <div class="certification-date">2025</div>
+      <a href="https://www.coursera.org/account/accomplishments/professional-cert/LEAUB0FNBCDB" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+    <div class="certification-card reveal reveal-delay-3">
+      <img src="data engineering.png" class="certification-img" alt="">
+      <div class="certification-name">Data Engineering Professional Certificate</div>
+      <div class="certification-info">Coursera</div>
+      <div class="certification-date">2025</div>
+      <a href="https://www.coursera.org/account/accomplishments/professional-cert/TKCH9IB6LTF4" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+    <div class="certification-card reveal">
+      <img src="Screenshot (84).png" class="certification-img" alt="">
+      <div class="certification-name">AWS Cloud Practitioner Essentials</div>
+      <div class="certification-info">Coursera</div>
+      <div class="certification-date">2025</div>
+      <a href="https://www.coursera.org/account/accomplishments/verify/Q00W86SI2B8N" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+    <div class="certification-card reveal reveal-delay-1">
+      <img src="IFRS 9.png" class="certification-img" alt="">
+      <div class="certification-name">IFRS9 Expected Credit Loss Model Development</div>
+      <div class="certification-info">Udemy</div>
+      <div class="certification-date">2025</div>
+      <a href="https://www.udemy.com/certificate/UC-4395e2ae-aa64-45af-8291-c8ab2e45c945/" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+    <div class="certification-card reveal reveal-delay-2">
+      <img src="credit risk.png" class="certification-img" alt="">
+      <div class="certification-name">Credit Risk Modeling & Scoring with ML</div>
+      <div class="certification-info">Udemy</div>
+      <div class="certification-date">2025</div>
+      <a href="https://www.udemy.com/certificate/UC-03c3566f-ae13-4163-954a-a6d90cc6d39b/" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+    <div class="certification-card reveal reveal-delay-3">
+      <img src="credit risk.png" class="certification-img" alt="">
+      <div class="certification-name">Basel Accords (II, III, V): Risk Management and Banking Regulations</div>
+      <div class="certification-info">Udemy</div>
+      <div class="certification-date">2025</div>
+      <a href="https://www.udemy.com/certificate/UC-c5e5b9fb-6b51-46b6-ad34-17a0ed0c9bb8/" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+    <div class="certification-card reveal">
+      <img src="Microsoft power bi.png" class="certification-img" alt="">
+      <div class="certification-name">Microsoft Power BI: Beginner to Advanced</div>
+      <div class="certification-info">Udemy</div>
+      <div class="certification-date">2024</div>
+      <a href="https://www.udemy.com/certificate/UC-b152d342-8449-4f33-9136-856c67d1cd87/" class="certification-btn" target="_blank">View Certificate</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-label reveal">07 / Contact</div>
+  <div class="section-title reveal reveal-delay-1">Let's <em>Connect</em></div>
+
+  <div class="contact-grid">
+    <div class="contact-info reveal reveal-delay-2">
+      <p>I'm always open to interesting opportunities in data engineering, data science, and machine learning. Whether you have a project, a question, or just want to connect — drop me a message.</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/trishad-phogole-48a75b23b" target="_blank" class="social-link">
+          <img src="linkedin.png" alt="LinkedIn"> LinkedIn
+        </a>
+        <a href="https://github.com/TrishadKano" target="_blank" class="social-link">
+          <img src="github.png" alt="GitHub"> GitHub
+        </a>
+        <a href="https://wa.me/27818872945?text=Hi%20Trishad%2C%20I%20found%20your%20portfolio%20online!" target="_blank" class="social-link">
+          <img src="social.png" alt="WhatsApp"> WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal reveal-delay-3" action="https://formspree.io/f/xnndeajl" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" autocomplete="off" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" autocomplete="off" placeholder="john@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="msg">Message</label>
+        <textarea name="message" id="msg" placeholder="Tell me about your project or opportunity..." autocomplete="off" required></textarea>
+      </div>
+      <button type="submit" class="form-submit-btn">Send Message →</button>
+      <div class="form-success" id="formSuccess">✓ Message sent! I'll be in touch soon.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>Designed &amp; built by <span>Trishad Phogole</span> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; Data Engineer &amp; Scientist</p>
+</footer>
+
+<a href="#home" class="back-top" id="backTop">↑</a>
+
+<script src="script1.js"></script>
+</body>
+</html>

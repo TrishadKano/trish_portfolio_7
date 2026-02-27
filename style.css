@@ -129,7 +129,7 @@ body.no-scroll {
     text-transform: capitalize;
     font-weight: 400;
     text-align: center;
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero-heading:hover {
@@ -143,7 +143,7 @@ body.no-scroll {
     height: 120vh;
     width: 40%;
     object-fit: contain;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 /* ===================== ABOUT SECTION ===================== */
@@ -502,6 +502,7 @@ body.no-scroll {
     font-weight: bold;
 }
 
+
 .card:nth-child(even){
     margin-left: auto;
 }
@@ -555,13 +556,13 @@ body.no-scroll {
 }
 
 .card:nth-child(2), .card:nth-child(2):before{
-    background: #ff4f4f;
+    background: #c70c0c;
 }
 .card:nth-child(3), .card:nth-child(3):before{
-    background: #ffb84f;
+    background: #cb8112;
 }
 .card:nth-child(4), .card:nth-child(4):before{
-    background: #3dca5c;
+    background: #565252;
 }
 .card:nth-child(5), .card:nth-child(5):before{
     background: #565252;
@@ -602,7 +603,6 @@ body.no-scroll {
     margin-bottom: 50px;
     color: white;
 }
-
 .project-heading:hover {
     background: #00CED1;
     color: #000;
@@ -635,6 +635,7 @@ body.no-scroll {
     position: relative;
     padding: 30px;
     color: #fff;
+    font-weight: 100;
     transition: .5s;
     opacity: 0;
     min-height: 350px;
@@ -1192,7 +1193,7 @@ body.no-scroll {
     }
 
     .project-info {
-        font-size: 14px;
+        font-size: 20px;
         line-height: 22px;
         margin: 10px 5px;
     }
