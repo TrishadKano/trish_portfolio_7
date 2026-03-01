@@ -362,7 +362,7 @@
       width: 38%;
       object-fit: cover;
       object-position: top center;
-      opacity: 0.35;
+      opacity: 0.40;
       mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
       -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
     }
