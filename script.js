@@ -56,19 +56,40 @@ window.addEventListener('scroll', () => {
   backTop.classList.toggle('visible', window.scrollY > 400);
 });
 
-// ── ACTIVE NAV ───────────────────────────────────────
+// ── ACTIVE NAV (FIXED) ───────────────────────────────
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.link');
+
+const sectionVisibility = {};
+
 const obs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const active = document.querySelector(`.link a[href="#${entry.target.id}"]`);
-      if (active) active.parentElement.classList.add('active');
-    }
+    sectionVisibility[entry.target.id] = entry.intersectionRatio;
   });
-}, { threshold: 0.4 });
-sections.forEach(s => obs.observe(s));
+
+  // Find the section with the highest visibility
+  let mostVisibleSection = null;
+  let maxRatio = 0;
+
+  for (const id in sectionVisibility) {
+    if (sectionVisibility[id] > maxRatio) {
+      maxRatio = sectionVisibility[id];
+      mostVisibleSection = id;
+    }
+  }
+
+  if (mostVisibleSection) {
+    navLinks.forEach(l => l.classList.remove('active'));
+    const active = document.querySelector(
+      `.link a[href="#${mostVisibleSection}"]`
+    );
+    if (active) active.parentElement.classList.add('active');
+  }
+}, {
+  threshold: [0.25, 0.4, 0.6, 0.75]
+});
+
+sections.forEach(section => obs.observe(section));
 
 // ── REVEAL ON SCROLL ─────────────────────────────────
 const revealObs = new IntersectionObserver(entries => {
