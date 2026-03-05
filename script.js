@@ -56,6 +56,7 @@ window.addEventListener('scroll', () => {
   backTop.classList.toggle('visible', window.scrollY > 400);
 });
 
+
 // ── ACTIVE NAV (FIXED) ───────────────────────────────
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.link');
@@ -161,6 +162,28 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     e.preventDefault();
     const target = document.querySelector(a.getAttribute('href'));
     if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// ── INSTANT PROJECT LOAD ────────────────────────────
+document.querySelectorAll('.link a[href="#projects"]').forEach(link => {
+  link.addEventListener('click', () => {
+
+    // Force nav active immediately
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.parentElement.classList.add('active');
+
+    // Force default project tab
+    const firstTabBtn = document.querySelector('.tab-btn');
+    const firstTabContent = document.querySelector('.tab-content');
+
+    if (firstTabBtn && firstTabContent) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      firstTabBtn.classList.add('active');
+      firstTabContent.classList.add('active');
+    }
   });
 });
 
