@@ -199,3 +199,182 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
     setTimeout(() => success.style.display = 'none', 4000);
   }, 2000);
 });
+
+// ── CHATBOT ──────────────────────────────────────────
+const TRISHAD_CONTEXT = `You are Trishad's AI assistant on his personal portfolio website. Answer questions about Trishad Phogole concisely and professionally. Here is everything you know about him:
+
+NAME: Trishad Phogole
+TITLE: Data Engineer & Data Scientist
+
+CURRENT ROLE:
+- Data BI & Analytics Graduate at MoMo from MTN (MTN Group FinTech), December 2025 – Present, Hybrid
+- Builds and maintains data pipelines and automation workflows in Microsoft Fabric environment
+- Designs interactive KPI dashboards for MoMo services
+- Automates secure SFTP file transfers using WinSCP (100+ files daily)
+- Reduced manual data processing time by 100%, improved data reliability by 95%
+
+PREVIOUS ROLE:
+- Data Scientist Intern at Mintek, March 2025 – November 2025
+- Deployed ML models achieving up to 20% improvement via A/B testing
+- Designed KPI dashboards (reduced manual reporting time by 40%)
+- Executed ETL processes improving data consistency by 95%
+- Leveraged SQL for large dataset analysis with 99% data accuracy
+
+EDUCATION:
+- BSc Honours in Computer Science, University of Limpopo, 2024
+- BSc Mathematical Sciences (Statistics & Computer Science), University of Limpopo, 2020–2023
+- National Senior Certificate, Kgagatlou Secondary School, 2015–2019
+
+SKILLS:
+Languages: Python (Pandas, NumPy, Matplotlib, Seaborn, TensorFlow, Keras, PyTorch, Scikit-learn), SAS
+Data & BI: Power BI (DAX, interactive dashboards), Microsoft Fabric, Apache Spark, Apache Kafka, WinSCP
+Cloud & Infra: Power Automate, Git, GitHub, Linux (Ubuntu), Oracle VM VirtualBox, AWS, Microsoft Azure
+Databases: MySQL, SQL Server, PostgreSQL
+ML / AI: TensorFlow & Keras, Scikit-Learn, PyTorch
+
+PROJECTS (13 total):
+1. Stock Price Prediction – LSTM neural networks for time series forecasting
+2. Credit Card Fraud Detection – Logistic Regression fraud classification system
+3. Disease Prediction System – SVM model deployed via Streamlit app
+4. Customer Segmentation – K-Means clustering with PCA
+5. Boston Housing Price Predictor – Regression model
+6. Udemy Courses EDA – Exploratory data analysis with visualisations
+7. Car Sales Performance Dashboard – Interactive Power BI dashboard (live demo available)
+8. Sales Performance Dashboard – Regional Power BI dashboard (live demo available)
+9. HR Analytics Dashboard – Workforce insights Power BI dashboard (live demo available)
+10. Library Management System – Relational SQL database with stored procedures
+11. Retail Sales Analysis – Advanced SQL with window functions
+12. Data Analyst Job Market Analysis – SQL exploration of job listings
+
+CERTIFICATIONS (9):
+- Data Analyst Professional Certificate – Coursera 2025
+- Data Science Professional Certificate – Coursera 2025
+- Machine Learning Professional Certificate – Coursera 2025
+- Data Engineering Professional Certificate – Coursera 2025
+- AWS Cloud Practitioner Essentials – Coursera 2025
+- IFRS9 Expected Credit Loss Model Development – Udemy 2025
+- Credit Risk Modeling & Scoring with ML – Udemy 2025
+- Basel Accords (II, III, V): Risk Management and Banking Regulations – Udemy 2025
+- Microsoft Power BI: Beginner to Advanced – Udemy 2024
+
+CONTACT:
+- LinkedIn: linkedin.com/in/trishad-phogole-48a75b23b
+- GitHub: github.com/TrishadKano
+- WhatsApp: +27 81 887 2945
+
+Keep answers short (2-4 sentences max). Be warm, professional, and enthusiastic about data. If asked something outside Trishad's profile, politely say you can only speak about Trishad.`;
+
+const chatFab      = document.getElementById('chatFab');
+const chatWindow   = document.getElementById('chatWindow');
+const chatClose    = document.getElementById('chatClose');
+const chatMessages = document.getElementById('chatMessages');
+const chatInput    = document.getElementById('chatInput');
+const chatSend     = document.getElementById('chatSend');
+const chatIconEl   = document.getElementById('chatIcon');
+const closeIconEl  = document.getElementById('closeIcon');
+const fabPing      = document.querySelector('.chat-fab-ping');
+
+let chatOpen = false;
+let chatHistory = [];
+let isBotTyping = false;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  chatWindow.classList.toggle('open', chatOpen);
+  chatIconEl.classList.toggle('hidden', chatOpen);
+  closeIconEl.classList.toggle('hidden', !chatOpen);
+  if (fabPing) fabPing.classList.add('hidden');
+  if (chatOpen) { chatInput.focus(); scrollToBottom(); }
+}
+
+chatFab.addEventListener('click', toggleChat);
+chatClose.addEventListener('click', toggleChat);
+
+function scrollToBottom() {
+  setTimeout(() => { chatMessages.scrollTop = chatMessages.scrollHeight; }, 50);
+}
+
+function appendMsg(role, text) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg ' + role;
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble';
+  bubble.textContent = text;
+  div.appendChild(bubble);
+  chatMessages.appendChild(div);
+  scrollToBottom();
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot';
+  div.id = 'chatTyping';
+  div.innerHTML = '<div class="chat-typing"><span></span><span></span><span></span></div>';
+  chatMessages.appendChild(div);
+  scrollToBottom();
+  return div;
+}
+
+function removeTyping() {
+  const t = document.getElementById('chatTyping');
+  if (t) t.remove();
+}
+
+// Remove suggestion buttons after first use
+function clearSuggestions() {
+  const sugg = chatMessages.querySelector('.chat-suggestions');
+  if (sugg) sugg.remove();
+}
+
+document.querySelectorAll('.sugg-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    sendMessage(btn.dataset.q);
+  });
+});
+
+async function sendMessage(text) {
+  if (!text || isBotTyping) return;
+  clearSuggestions();
+  appendMsg('user', text);
+  chatHistory.push({ role: 'user', content: text });
+  chatInput.value = '';
+  isBotTyping = true;
+  chatSend.disabled = true;
+
+  const typingEl = showTyping();
+
+  try {
+    const res = await fetch('https://portfolio-chatbot-proxy.vercel.app/api/chat', {
+      method: 'POST',
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: TRISHAD_CONTEXT,
+        messages: chatHistory
+      })
+    });
+
+    const data = await res.json();
+    removeTyping();
+
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response right now. Please try again!";
+    appendMsg('bot', reply);
+    chatHistory.push({ role: 'assistant', content: reply });
+  } catch (err) {
+    removeTyping();
+    appendMsg('bot', "Oops, something went wrong. Please check your connection and try again.");
+  }
+
+  isBotTyping = false;
+  chatSend.disabled = false;
+  chatInput.focus();
+}
+
+chatSend.addEventListener('click', () => sendMessage(chatInput.value.trim()));
+chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(chatInput.value.trim()); });
+
+// Register chatbot elements with the cursor hover effect
+document.querySelectorAll('.chat-fab,.chat-send,.sugg-btn,.chat-input,.chat-header-close').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); cursorRing.classList.add('hover'); });
+  el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); cursorRing.classList.remove('hover'); });
+});
