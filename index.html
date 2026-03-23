@@ -740,51 +740,32 @@ performance monitoring, <strong style="color:var(--teal)">reducing manual report
 
 <a href="#home" class="back-top" id="backTop">↑</a>
 
-
-<!-- ─── CHATBOT ──────────────────────────────────── -->
-<div class="chat-fab" id="chatFab" title="Chat with Trishad's AI">
-  <svg id="chatIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-  </svg>
-  <svg id="closeIcon" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
-  <span class="chat-fab-ping"></span>
-</div>
-
+<!-- FAQ CHATBOT -->
 <div class="chat-window" id="chatWindow">
   <div class="chat-header">
-    <div class="chat-header-avatar">T</div>
-    <div class="chat-header-info">
-      <div class="chat-header-name">Trishad's AI</div>
-      <div class="chat-header-status"><span class="status-dot"></span> Online</div>
+    <div class="chat-header-avatar">TP</div>
+    <div>
+      <div class="chat-header-name">Trishad's Assistant</div>
+      <div class="chat-header-status"><span class="status-dot"></span> Ask me anything</div>
     </div>
-    <button class="chat-header-close" id="chatClose">×</button>
+    <button class="chat-header-close" id="chatClose" aria-label="Close chat">✕</button>
   </div>
-
-  <div class="chat-messages" id="chatMessages">
-    <div class="chat-msg bot">
-      <div class="chat-bubble">
-        👋 Hi! I'm Trishad's AI assistant. Ask me anything about his experience, skills, projects, or how to get in touch!
-      </div>
-    </div>
-    <div class="chat-suggestions">
-      <button class="sugg-btn" data-q="What is Trishad's current role?">Current role</button>
-      <button class="sugg-btn" data-q="What are his top skills?">Top skills</button>
-      <button class="sugg-btn" data-q="Tell me about his projects">Projects</button>
-      <button class="sugg-btn" data-q="How can I contact Trishad?">Contact</button>
-    </div>
-  </div>
-
+ 
+  <div class="chat-messages" id="chatMessages"></div>
+ 
   <div class="chat-input-wrap">
-    <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything…" autocomplete="off" maxlength="300"/>
-    <button class="chat-send" id="chatSend">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-      </svg>
+    <input class="chat-input" id="chatInput" type="text" placeholder="Type a question..." autocomplete="off">
+    <button class="chat-send" id="chatSend" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
   </div>
 </div>
+ 
+<button class="chat-fab" id="chatFab" title="Chat with Trishad's Assistant" aria-label="Open chat">
+  <div class="chat-fab-ping" id="chatPing"></div>
+  <svg id="chatIconOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg id="chatIconClose" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
 
 <script src="script.js"></script>
 </body>

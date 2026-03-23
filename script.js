@@ -200,181 +200,173 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
   }, 2000);
 });
 
+// CHATBOT 
+
+const FAQ = [
+  {
+    keys: ['who is','about trishad','introduce','tell me about','himself','background'],
+    answer: "Trishad Phogole is a <strong>Data Engineer & Data Scientist</strong> based in South Africa with over one year of hands-on experience in machine learning, data engineering, and business intelligence. He builds scalable data pipelines, deploys ML models, and delivers data-driven insights that improve operational efficiency."
+  },
+  {
+    keys: ['experience','work','job','momo','mtn','mintek','employer','company'],
+    answer: "Trishad has worked at two organisations:<br><br><strong>MoMo from MTN</strong> — Data BI & Analytics Graduate (December 2025 – Present, Hybrid). He builds and maintains data pipelines in Microsoft Fabric, designs KPI dashboards, and automates SFTP file transfers using WinSCP, ingesting 100+ files daily.<br><br><strong>Mintek</strong> — Data Scientist Intern (March 2025 – November 2025, Full-time). He developed and deployed ML models, designed KPI dashboards, executed ETL processes integrating SharePoint and SQL data, and translated complex data into actionable business insights."
+  },
+  {
+    keys: ['education','degree','university','limpopo','honours','bsc','study','studied','school'],
+    answer: "Trishad's educational background:<br>• <strong>BSc Honours in Computer Science</strong> — University of Limpopo (2024)<br>• <strong>BSc in Mathematical Sciences (Statistics & Computer Science)</strong> — University of Limpopo (2020–2023)<br>• <strong>National Senior Certificate (Matric)</strong> — Kgagatlou Secondary School (2015–2019)"
+  },
+  {
+    keys: ['certification','certificate','qualified','coursera','udemy','aws','ifrs','basel','power bi'],
+    answer: "Trishad holds 9 professional certifications:<br>• Data Analyst Professional Certificate — Coursera (2025)<br>• Data Science Professional Certificate — Coursera (2025)<br>• Machine Learning Professional Certificate — Coursera (2025)<br>• Data Engineering Professional Certificate — Coursera (2025)<br>• AWS Cloud Practitioner Essentials — Coursera (2025)<br>• IFRS9 Expected Credit Loss Model Development — Udemy (2025)<br>• Credit Risk Modeling & Scoring with ML — Udemy (2025)<br>• Basel Accords (II, III, V): Risk Management — Udemy (2025)<br>• Microsoft Power BI: Beginner to Advanced — Udemy (2024)"
+  },
+  {
+    keys: ['skill','skills','language','tools','technology','technologies','use','uses','python','sql','power bi','spark','fabric','pytorch','tensorflow','scikit'],
+    answer: "Trishad's key skills include:<br>• <strong>Languages:</strong> Python (Pandas, NumPy, Matplotlib, TensorFlow, Keras, PyTorch, Scikit-learn), SQL<br>• <strong>Data & BI:</strong> Power BI, Microsoft Fabric, Apache Spark, WinSCP<br>• <strong>Cloud & Infra:</strong> Power Automate, Git, GitHub<br>• <strong>Databases:</strong> MySQL, SQL Server<br>• <strong>ML / AI:</strong> TensorFlow & Keras, Scikit-Learn, PyTorch"
+  },
+  {
+    keys: ['project','projects','portfolio','machine learning','power bi','sql','work he has done'],
+    answer: "Trishad has 13 projects across three categories:<br><br><strong>ML / Data Science:</strong> Loan Default Prediction (XGBoost), Credit Score Classification, Disease Prediction System (SVM), Customer Segmentation (K-Means), Boston Housing Price Predictor, Udemy Courses EDA.<br><br><strong>Power BI:</strong> Car Sales Performance Dashboard, Sales Performance Dashboard, HR Analytics Dashboard.<br><br><strong>SQL:</strong> Library Management System, Retail Sales Analysis, Data Analyst Job Market Analysis.<br><br>View them all on his <a href='https://github.com/TrishadKano' target='_blank' rel='noopener noreferrer' style='color:var(--teal)'>GitHub</a>."
+  },
+  {
+    keys: ['contact','email','reach','message','get in touch','hire','available'],
+    answer: "You can connect with Trishad via:<br>💼 <a href='https://linkedin.com/in/trishad-phogole-48a75b23b' target='_blank' rel='noopener noreferrer' style='color:var(--teal)'>LinkedIn</a><br>💻 <a href='https://github.com/TrishadKano' target='_blank' rel='noopener noreferrer' style='color:var(--teal)'>GitHub</a><br>💬 <a href='https://wa.me/27818872945' target='_blank' rel='noopener noreferrer' style='color:var(--teal)'>WhatsApp</a><br><br>Or use the <strong>Contact form</strong> on this page!"
+  },
+  {
+    keys: ['location','based','south africa','where','country','city','limpopo','johannesburg'],
+    answer: "Trishad is based in <strong>South Africa</strong>, currently working in a hybrid role at MoMo from MTN (MTN Group FinTech)."
+  },
+  {
+    keys: ['linkedin','github','social','link','profile','whatsapp'],
+    answer: "You can find Trishad on:<br>💼 <a href='https://linkedin.com/in/trishad-phogole-48a75b23b' target='_blank' rel='noopener noreferrer' style='color:var(--teal)'>LinkedIn</a><br>💻 <a href='https://github.com/TrishadKano' target='_blank' rel='noopener noreferrer' style='color:var(--teal)'>GitHub</a>"
+  },
+  {
+    keys: ['data engineer','data science','pipeline','etl','ml','machine learning','analytics','bi'],
+    answer: "Trishad specialises in <strong>data engineering and data science</strong>. He builds scalable data pipelines in Microsoft Fabric, automates ETL workflows, deploys machine learning models, and creates interactive Power BI dashboards — bridging the gap between raw data and actionable business insight."
+  },
+  {
+    keys: ['hello','hi','hey','good morning','good afternoon','howzit','greet'],
+    answer: "Hello! 👋 I'm Trishad's portfolio assistant. I can tell you about his experience, skills, certifications, projects, or how to contact him. What would you like to know?"
+  },
+  {
+    keys: ['thank','thanks','appreciate','helpful'],
+    answer: "You're welcome! 😊 Feel free to ask anything else or connect with Trishad directly on LinkedIn or WhatsApp."
+  }
+];
+ 
 // ── CHATBOT ──────────────────────────────────────────
-const TRISHAD_CONTEXT = `You are Trishad's AI assistant on his personal portfolio website. Answer questions about Trishad Phogole concisely and professionally. Here is everything you know about him:
-
-NAME: Trishad Phogole
-TITLE: Data Engineer & Data Scientist
-
-CURRENT ROLE:
-- Data BI & Analytics Graduate at MoMo from MTN (MTN Group FinTech), December 2025 – Present, Hybrid
-- Builds and maintains data pipelines and automation workflows in Microsoft Fabric environment
-- Designs interactive KPI dashboards for MoMo services
-- Automates secure SFTP file transfers using WinSCP (100+ files daily)
-- Reduced manual data processing time by 100%, improved data reliability by 95%
-
-PREVIOUS ROLE:
-- Data Scientist Intern at Mintek, March 2025 – November 2025
-- Deployed ML models achieving up to 20% improvement via A/B testing
-- Designed KPI dashboards (reduced manual reporting time by 40%)
-- Executed ETL processes improving data consistency by 95%
-- Leveraged SQL for large dataset analysis with 99% data accuracy
-
-EDUCATION:
-- BSc Honours in Computer Science, University of Limpopo, 2024
-- BSc Mathematical Sciences (Statistics & Computer Science), University of Limpopo, 2020–2023
-- National Senior Certificate, Kgagatlou Secondary School, 2015–2019
-
-SKILLS:
-Languages: Python (Pandas, NumPy, Matplotlib, Seaborn, TensorFlow, Keras, PyTorch, Scikit-learn), SAS
-Data & BI: Power BI (DAX, interactive dashboards), Microsoft Fabric, Apache Spark, Apache Kafka, WinSCP
-Cloud & Infra: Power Automate, Git, GitHub, Linux (Ubuntu), Oracle VM VirtualBox, AWS, Microsoft Azure
-Databases: MySQL, SQL Server, PostgreSQL
-ML / AI: TensorFlow & Keras, Scikit-Learn, PyTorch
-
-PROJECTS (13 total):
-1. Stock Price Prediction – LSTM neural networks for time series forecasting
-2. Credit Card Fraud Detection – Logistic Regression fraud classification system
-3. Disease Prediction System – SVM model deployed via Streamlit app
-4. Customer Segmentation – K-Means clustering with PCA
-5. Boston Housing Price Predictor – Regression model
-6. Udemy Courses EDA – Exploratory data analysis with visualisations
-7. Car Sales Performance Dashboard – Interactive Power BI dashboard (live demo available)
-8. Sales Performance Dashboard – Regional Power BI dashboard (live demo available)
-9. HR Analytics Dashboard – Workforce insights Power BI dashboard (live demo available)
-10. Library Management System – Relational SQL database with stored procedures
-11. Retail Sales Analysis – Advanced SQL with window functions
-12. Data Analyst Job Market Analysis – SQL exploration of job listings
-
-CERTIFICATIONS (9):
-- Data Analyst Professional Certificate – Coursera 2025
-- Data Science Professional Certificate – Coursera 2025
-- Machine Learning Professional Certificate – Coursera 2025
-- Data Engineering Professional Certificate – Coursera 2025
-- AWS Cloud Practitioner Essentials – Coursera 2025
-- IFRS9 Expected Credit Loss Model Development – Udemy 2025
-- Credit Risk Modeling & Scoring with ML – Udemy 2025
-- Basel Accords (II, III, V): Risk Management and Banking Regulations – Udemy 2025
-- Microsoft Power BI: Beginner to Advanced – Udemy 2024
-
-CONTACT:
-- LinkedIn: linkedin.com/in/trishad-phogole-48a75b23b
-- GitHub: github.com/TrishadKano
-- WhatsApp: +27 81 887 2945
-
-Keep answers short (2-4 sentences max). Be warm, professional, and enthusiastic about data. If asked something outside Trishad's profile, politely say you can only speak about Trishad.`;
-
-const chatFab      = document.getElementById('chatFab');
-const chatWindow   = document.getElementById('chatWindow');
-const chatClose    = document.getElementById('chatClose');
-const chatMessages = document.getElementById('chatMessages');
-const chatInput    = document.getElementById('chatInput');
-const chatSend     = document.getElementById('chatSend');
-const chatIconEl   = document.getElementById('chatIcon');
-const closeIconEl  = document.getElementById('closeIcon');
-const fabPing      = document.querySelector('.chat-fab-ping');
-
+const chatFab     = document.getElementById('chatFab');
+const chatWindow  = document.getElementById('chatWindow');
+const chatClose   = document.getElementById('chatClose');
+const chatMessages= document.getElementById('chatMessages');
+const chatInput   = document.getElementById('chatInput');
+const chatSend    = document.getElementById('chatSend');
+const chatPing    = document.getElementById('chatPing');
+const chatIconOpen  = document.getElementById('chatIconOpen');
+const chatIconClose = document.getElementById('chatIconClose');
+ 
 let chatOpen = false;
-let chatHistory = [];
-let isBotTyping = false;
-
+ 
 function toggleChat() {
   chatOpen = !chatOpen;
   chatWindow.classList.toggle('open', chatOpen);
-  chatIconEl.classList.toggle('hidden', chatOpen);
-  closeIconEl.classList.toggle('hidden', !chatOpen);
-  if (fabPing) fabPing.classList.add('hidden');
-  if (chatOpen) { chatInput.focus(); scrollToBottom(); }
+  chatIconOpen.classList.toggle('hidden', chatOpen);
+  chatIconClose.classList.toggle('hidden', !chatOpen);
+  if (chatOpen) {
+    chatPing.classList.add('hidden');
+    if (chatMessages.children.length === 0) {
+      setTimeout(() => addBotWithSuggestions(
+        "Hi there! 👋 I'm Trishad's assistant. Ask me anything about his experience, skills, certifications, or projects — or pick a quick question below!",
+        ['Who is Trishad?','Experience','Skills','Certifications','Projects','Contact','Location','Tools']
+      ), 350);
+    }
+    setTimeout(() => chatInput.focus(), 200);
+  }
 }
-
+ 
 chatFab.addEventListener('click', toggleChat);
 chatClose.addEventListener('click', toggleChat);
-
-function scrollToBottom() {
-  setTimeout(() => { chatMessages.scrollTop = chatMessages.scrollHeight; }, 50);
+ 
+function timeNow() {
+  return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
-
-function appendMsg(role, text) {
-  const div = document.createElement('div');
-  div.className = 'chat-msg ' + role;
+ 
+function showTyping() {
+  const el = document.createElement('div');
+  el.className = 'chat-msg bot';
+  el.id = 'typingIndicator';
+  el.innerHTML = `<div class="chat-typing"><span></span><span></span><span></span></div>`;
+  chatMessages.appendChild(el);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return el;
+}
+ 
+function addBot(text) {
+  const el = document.createElement('div');
+  el.className = 'chat-msg bot';
+  el.innerHTML = `<div class="chat-bubble">${text}</div>`;
+  chatMessages.appendChild(el);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+ 
+function addBotWithSuggestions(text, suggestions) {
+  const el = document.createElement('div');
+  el.className = 'chat-msg bot';
+  const suggHTML = suggestions.map(s =>
+    `<button class="sugg-btn" onclick="askFAQ('${s}')">${s}</button>`
+  ).join('');
+  el.innerHTML = `
+    <div>
+      <div class="chat-bubble">${text}</div>
+      <div class="chat-suggestions" style="margin-top:8px">${suggHTML}</div>
+    </div>`;
+  chatMessages.appendChild(el);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+ 
+function addUser(text) {
+  const el = document.createElement('div');
+  el.className = 'chat-msg user';
   const bubble = document.createElement('div');
   bubble.className = 'chat-bubble';
-  bubble.textContent = text;
-  div.appendChild(bubble);
-  chatMessages.appendChild(div);
-  scrollToBottom();
+  bubble.textContent = text; // textContent prevents XSS
+  el.appendChild(bubble);
+  chatMessages.appendChild(el);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-
-function showTyping() {
-  const div = document.createElement('div');
-  div.className = 'chat-msg bot';
-  div.id = 'chatTyping';
-  div.innerHTML = '<div class="chat-typing"><span></span><span></span><span></span></div>';
-  chatMessages.appendChild(div);
-  scrollToBottom();
-  return div;
-}
-
-function removeTyping() {
-  const t = document.getElementById('chatTyping');
-  if (t) t.remove();
-}
-
-// Remove suggestion buttons after first use
-function clearSuggestions() {
-  const sugg = chatMessages.querySelector('.chat-suggestions');
-  if (sugg) sugg.remove();
-}
-
-document.querySelectorAll('.sugg-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    sendMessage(btn.dataset.q);
-  });
-});
-
-async function sendMessage(text) {
-  if (!text || isBotTyping) return;
-  clearSuggestions();
-  appendMsg('user', text);
-  chatHistory.push({ role: 'user', content: text });
-  chatInput.value = '';
-  isBotTyping = true;
-  chatSend.disabled = true;
-
-  const typingEl = showTyping();
-
-  try {
-    const res = await fetch('https://portfolio-chatbot-proxy.vercel.app/api/chat', {
-      method: 'POST',
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: TRISHAD_CONTEXT,
-        messages: chatHistory
-      })
-    });
-
-    const data = await res.json();
-    removeTyping();
-
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response right now. Please try again!";
-    appendMsg('bot', reply);
-    chatHistory.push({ role: 'assistant', content: reply });
-  } catch (err) {
-    removeTyping();
-    appendMsg('bot', "Oops, something went wrong. Please check your connection and try again.");
+ 
+function getFAQAnswer(input) {
+  const q = input.toLowerCase();
+  for (const faq of FAQ) {
+    if (faq.keys.some(k => q.includes(k))) return faq.answer;
   }
-
-  isBotTyping = false;
-  chatSend.disabled = false;
-  chatInput.focus();
+  return "I'm not sure about that, but you can connect with Trishad directly on <a href='https://linkedin.com/in/trishad-phogole-48a75b23b' target='_blank' rel='noopener noreferrer' style='color:var(--teal)'>LinkedIn</a> or via <a href='https://wa.me/27818872945' target='_blank' rel='noopener noreferrer' style='color:var(--teal)'>WhatsApp</a>. He'd love to hear from you! 😊";
 }
-
-chatSend.addEventListener('click', () => sendMessage(chatInput.value.trim()));
-chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(chatInput.value.trim()); });
-
-// Register chatbot elements with the cursor hover effect
-document.querySelectorAll('.chat-fab,.chat-send,.sugg-btn,.chat-input,.chat-header-close').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); cursorRing.classList.add('hover'); });
-  el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); cursorRing.classList.remove('hover'); });
-});
+ 
+function askFAQ(q) {
+  addUser(q);
+  chatSend.disabled = true;
+  const typing = showTyping();
+  setTimeout(() => {
+    typing.remove();
+    addBot(getFAQAnswer(q));
+    chatSend.disabled = false;
+  }, 550);
+}
+ 
+function handleChat() {
+  const text = chatInput.value.trim();
+  if (!text) return;
+  chatInput.value = '';
+  addUser(text);
+  chatSend.disabled = true;
+  const typing = showTyping();
+  setTimeout(() => {
+    typing.remove();
+    addBot(getFAQAnswer(text));
+    chatSend.disabled = false;
+    chatInput.focus();
+  }, 550);
+}
+ 
+chatSend.addEventListener('click', handleChat);
+chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') handleChat(); });
