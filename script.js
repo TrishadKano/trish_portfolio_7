@@ -276,7 +276,7 @@ function toggleChat() {
     if (chatMessages.children.length === 0) {
       setTimeout(() => addBotWithSuggestions(
         "Hi there! 👋 I'm Trishad's assistant. Ask me anything about his experience, skills, certifications, or projects — or pick a quick question below!",
-        ['Who is Trishad?','Experience','Skills','Certifications','Projects','Contact','Location','Tools']
+        ['Who is Trishad?','Experience','Skills','Certifications','Projects','Contact','Location']
       ), 350);
     }
     setTimeout(() => chatInput.focus(), 200);
