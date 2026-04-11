@@ -205,7 +205,7 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
 const FAQ = [
   {
     keys: ['who is','about trishad','introduce','tell me about','himself','background'],
-    answer: "Trishad Phogole is a <strong>Data Engineer & Data Scientist</strong> based in South Africa with over one year of hands-on experience in machine learning, data engineering, and business intelligence. He builds scalable data pipelines, deploys ML models, and delivers data-driven insights that improve operational efficiency."
+    answer: "Trishad Phogole is a <strong>Data Engineer & Data Scientist</strong> based in South Africa with over one year of hands-on experience in data science, data engineering, and business intelligence. He builds scalable data pipelines, deploys ML models, and delivers data-driven insights that improve operational efficiency."
   },
   {
     keys: ['experience','work','job','momo','mtn','mintek','employer','company'],
