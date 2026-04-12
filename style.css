@@ -338,7 +338,7 @@
       align-items: center;
       gap: 8px;
     }
-    .btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px var(--teal-glow); }
+    .btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px var(--teal-dim); }
     .btn-outline {
       font-family: var(--font-mono);
       font-size: 13px;
