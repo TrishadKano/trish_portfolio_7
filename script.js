@@ -30,7 +30,7 @@ document.querySelectorAll('a,button,.skill-card,.project-card,.certification-car
 });
 
 // ── TYPEWRITER ───────────────────────────────────────
-const roles = ['Data Engineer', 'Data Scientist'];
+const roles = ['Data Engineer', 'Data Scientist', 'AI Engineer'];
 let ri = 0, ci = 0, deleting = false;
 const typeTarget = document.getElementById('typeTarget');
 function type() {
