@@ -275,7 +275,7 @@
     }
     .home-name {
       font-family: var(--font-display);
-      font-size: clamp(42px,7vw,90px);
+      font-size: clamp(40px,5vw,88px);
       font-weight: 800;
       line-height: 0.95;
       color: var(--text);
@@ -422,6 +422,11 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    
+
+
+
 
     /* ── ABOUT SECTION ──────────────────────────── */
     #about { background: var(--bg); }
@@ -2327,4 +2332,5 @@
       .chat-window { width: calc(100vw - 24px); right: 12px; bottom: 88px; }
       .chat-fab { right: 20px; bottom: 20px; }
     }
- 
+    
+
